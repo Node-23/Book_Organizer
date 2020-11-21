@@ -6,16 +6,18 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Books {
 
-    private  SimpleBooleanProperty finished;
-    private  SimpleStringProperty name;
-    private  SimpleStringProperty author;
-    private  SimpleStringProperty publisher;
-    private  SimpleStringProperty Notes;
-    private  SimpleStringProperty category;
-    private  SimpleIntegerProperty grade;
-    private  SimpleIntegerProperty year;
+    private SimpleBooleanProperty finished;
+    private SimpleStringProperty name;
+    private SimpleStringProperty author;
+    private SimpleStringProperty publisher;
+    private SimpleStringProperty Notes;
+    private SimpleStringProperty category;
+    private SimpleIntegerProperty grade;
+    private SimpleIntegerProperty year;
+    private String bookCover;
 
-    public Books(Boolean finished, String name, String author, String publisher,String category,Integer grade,Integer year) {
+    public Books(Boolean finished, String name, String author, String publisher, String category, Integer grade,
+            Integer year, String bookCover) {
         this.finished = new SimpleBooleanProperty(finished);
         this.name = new SimpleStringProperty(name);
         this.author = new SimpleStringProperty(author);
@@ -24,9 +26,11 @@ public class Books {
         this.grade = new SimpleIntegerProperty(grade);
         this.year = new SimpleIntegerProperty(year);
         this.Notes = new SimpleStringProperty("");
+        this.bookCover = bookCover;
     }
 
-    public Books(Boolean finished, String name, String author, String publisher,String category,Integer year) {
+    public Books(Boolean finished, String name, String author, String publisher, String category, Integer year,
+    String bookCover) {
         this.finished = new SimpleBooleanProperty(finished);
         this.name = new SimpleStringProperty(name);
         this.author = new SimpleStringProperty(author);
@@ -35,12 +39,13 @@ public class Books {
         this.grade = new SimpleIntegerProperty(-1);
         this.year = new SimpleIntegerProperty(year);
         this.Notes = new SimpleStringProperty("");
+        this.bookCover = bookCover;
     }
 
     public Books() {
         this.Notes = new SimpleStringProperty("");
     }
-    
+
     // Finished------------------------------------------------------------------------------
     public boolean isFinished() {
         return finished.get();
@@ -96,8 +101,9 @@ public class Books {
         this.publisher.set(publisher);
     }
 
-    // Category ------------------------------------------------------------------------------
-    
+    // Category
+    // ------------------------------------------------------------------------------
+
     public String getCategory() {
         return this.category.get();
     }
@@ -106,7 +112,8 @@ public class Books {
         this.category.set(category);
     }
 
-    // Grade ------------------------------------------------------------------------------
+    // Grade
+    // ------------------------------------------------------------------------------
 
     public Integer getGrade() {
         return grade.get();
@@ -115,7 +122,8 @@ public class Books {
     public void setGrade(int grade) {
         this.grade.set(grade);
     }
-  // Year------------------------------------------------------------------------------   
+
+    // Year------------------------------------------------------------------------------
     public Integer getYear() {
         return year.get();
     }
@@ -127,13 +135,22 @@ public class Books {
     public void setYear(int year) {
         this.year.set(year);
     }
- // Notes------------------------------------------------------------------------------
+
+    // Notes------------------------------------------------------------------------------
     public String getNotes() {
         return this.Notes.get();
     }
 
     public void setNotes(String Notes) {
         this.Notes.set(Notes);
-    }    
+    }
 
+    // Image-----------------------------------------------------------------------------
+    public void setBookCover(String image) {
+        bookCover = image;
+    }
+
+    public String getBookCover() {
+        return bookCover;
+    }
 }

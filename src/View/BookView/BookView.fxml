@@ -9,13 +9,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.BookView.BookViewController">
    <children>
-      <MenuBar layoutX="7.0" layoutY="14.0" prefHeight="31.0" prefWidth="684.0" AnchorPane.bottomAnchor="341.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar layoutX="7.0" layoutY="14.0" prefHeight="31.0" prefWidth="684.0" AnchorPane.bottomAnchor="307.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu fx:id="edit" mnemonicParsing="false" text="Edit" />
           <Menu fx:id="delete" mnemonicParsing="false" text="Delete" />
         </menus>
       </MenuBar>
-      <ImageView fitHeight="287.0" fitWidth="230.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookCover" fitHeight="287.0" fitWidth="230.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="277.0" layoutY="48.0" text="Name:">
          <font>
             <Font size="21.0" />

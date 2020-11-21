@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="478.0" maxWidth="308.0" minHeight="335.0" minWidth="308.0" prefHeight="470.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddView.AddViewController">
+<AnchorPane maxHeight="528.0" maxWidth="308.0" minHeight="335.0" minWidth="308.0" prefHeight="528.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddView.AddViewController">
    <children>
       <TextField fx:id="nameTxt" layoutX="94.0" layoutY="91.0" promptText="Book name..." />
       <TextField fx:id="authorTxt" layoutX="94.0" layoutY="138.0" promptText="Book author..." />
@@ -24,10 +24,13 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <CheckBox fx:id="finished" layoutX="182.0" layoutY="381.0" mnemonicParsing="false" onAction="#unfinishedBookGrade" />
-      <Label layoutX="110.0" layoutY="381.0" text="Finished:" />
-      <Button fx:id="addBt" layoutX="57.0" layoutY="433.0" mnemonicParsing="false" onAction="#onAddBtAction" text="Add" />
-      <Button fx:id="cancelBt" layoutX="185.0" layoutY="433.0" mnemonicParsing="false" onAction="#onCancelBtAction" text="Cancel" />
+      <Button fx:id="imageBt" layoutX="114.0" layoutY="381.0" mnemonicParsing="false" onAction="#onImageBtAction" text="Add Image" />
+      <CheckBox fx:id="finished" layoutX="96.0" layoutY="428.0" mnemonicParsing="false" onAction="#unfinishedBookGrade" />
+      <Label layoutX="24.0" layoutY="428.0" text="Finished:" />
+      <CheckBox fx:id="imageCB" disable="true" layoutX="244.0" layoutY="426.0" mnemonicParsing="false" onAction="#unselectImage" />
+      <Label layoutX="189.0" layoutY="426.0" text="Image:" />
+      <Button fx:id="addBt" layoutX="57.0" layoutY="493.0" mnemonicParsing="false" onAction="#onAddBtAction" text="Add" />
+      <Button fx:id="cancelBt" layoutX="185.0" layoutY="493.0" mnemonicParsing="false" onAction="#onCancelBtAction" text="Cancel" />
       <Label layoutX="24.0" layoutY="232.0" text="Category: " />
       <Label layoutX="24.0" layoutY="275.0" text="Grade:" />
       <Label layoutX="151.0" layoutY="280.0" text="*Select Finished to enable">

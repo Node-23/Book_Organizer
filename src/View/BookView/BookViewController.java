@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class BookViewController implements Initializable {
 
@@ -28,6 +30,8 @@ public class BookViewController implements Initializable {
     private Label grade;
     @FXML
     private Label year;
+    @FXML
+    private ImageView bookCover;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -42,7 +46,14 @@ public class BookViewController implements Initializable {
             grade.setText("Not finished yet");    
         }else{
         grade.setText(Integer.toString(book.getGrade()));
-        }    
+        }
+        if(book.getBookCover()== null){
+            //Create and set a default book cover image
+        }else{  
+        String path = "file:///"+book.getBookCover();
+        bookCover.setImage(new Image(path));
+         
+        }
 
     }
 

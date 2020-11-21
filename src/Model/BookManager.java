@@ -17,7 +17,8 @@ public class BookManager {
 
     public static void addBooks(Books book) {
         bookList.add(
-                new Books(book.isFinished(), book.getName(), book.getAuthor(), book.getPublisher(),book.getCategory(),book.getGrade() ,book.getYear()));
+                new Books(book.isFinished(), book.getName(), book.getAuthor(), book.getPublisher(),book.getCategory(),book.getGrade() ,book.getYear(),
+                        book.getBookCover()));
     }
 
     public static void editBook(String bookName, Books book) {
