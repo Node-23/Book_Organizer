@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class BookManager {
 
     private static ArrayList<Books> bookList = new ArrayList<>();
-    private static String bookNameToNote;
+    private static String bookSelectedName;
 
-    public static void setBookOfTheNotes(String bookName){
-        bookNameToNote = bookName;
+    public static void setBookSelected(String bookName){
+        bookSelectedName = bookName;
     }
 
-    public static String getBookOfTheNotes(){
-        return bookNameToNote;
+    public static String getBookSelected(){
+        return bookSelectedName;
     }    
 
     public static void addBooks(Books book) {

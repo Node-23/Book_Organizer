@@ -89,4 +89,22 @@ public class MainViewController implements Initializable {
         table.setItems(FXCollections.observableArrayList(BookManager.getBookList()));
     }
 
+    @FXML
+    public void openBook(MouseEvent event) throws IOException {
+        if (event.getClickCount() == 2 && table.getSelectionModel().getSelectedItem() != null) 
+        {   
+            BookManager.setBookSelected(table.getSelectionModel().getSelectedItem().getName());
+            Parent parent = FXMLLoader.load(getClass().getResource("/View/BookView/BookView.fxml"));
+            Scene scene = new Scene(parent);
+            Stage popupwindow = new Stage();
+            popupwindow.setResizable(false);
+            popupwindow.initModality(Modality.APPLICATION_MODAL);
+            popupwindow.setTitle(BookManager.getBookSelected());
+            popupwindow.getIcons().add(new Image(getClass().getResourceAsStream(iconPath)));
+            popupwindow.setScene(scene);
+            popupwindow.showAndWait();
+            table.setItems(FXCollections.observableArrayList(BookManager.getBookList()));
+        }
+    }
+
 }
