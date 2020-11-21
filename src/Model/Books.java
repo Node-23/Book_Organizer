@@ -119,7 +119,7 @@ public class Books {
         return grade.get();
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(Integer grade) {
         this.grade.set(grade);
     }
 

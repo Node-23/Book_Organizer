@@ -107,4 +107,18 @@ public class MainViewController implements Initializable {
         }
     }
 
+    @FXML
+    public void onMenuSearchAction() throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/View/SearchView/SearchView.fxml"));
+        Scene scene = new Scene(parent);
+        scene.getStylesheets().add(getClass().getResource("/View/SearchView/TableView.css").toExternalForm());
+        Stage popupwindow = new Stage();
+        popupwindow.setResizable(false);
+        popupwindow.initModality(Modality.APPLICATION_MODAL);
+        popupwindow.setTitle("Search");
+        popupwindow.getIcons().add(new Image(getClass().getResourceAsStream(iconPath)));
+        popupwindow.setScene(scene);
+        popupwindow.showAndWait();
+    }
+
 }
