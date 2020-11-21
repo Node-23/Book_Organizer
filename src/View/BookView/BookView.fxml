@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.BookView.BookViewController">
+   <children>
+      <MenuBar layoutX="7.0" layoutY="14.0" prefHeight="31.0" prefWidth="684.0" AnchorPane.bottomAnchor="341.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu fx:id="edit" mnemonicParsing="false" text="Edit" />
+          <Menu fx:id="delete" mnemonicParsing="false" text="Delete" />
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="287.0" fitWidth="230.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="277.0" layoutY="48.0" text="Name:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="93.0" text="Author:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="138.0" text="Publisher:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="183.0" text="Category:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="228.0" text="Grade:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="273.0" text="Year:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="48.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="93.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="138.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="183.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="228.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="273.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

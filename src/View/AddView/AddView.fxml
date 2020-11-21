@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="478.0" maxWidth="308.0" minHeight="335.0" minWidth="308.0" prefHeight="470.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddView.AddViewController">
+   <children>
+      <TextField fx:id="nameTxt" layoutX="94.0" layoutY="91.0" promptText="Book name..." />
+      <TextField fx:id="authorTxt" layoutX="94.0" layoutY="138.0" promptText="Book author..." />
+      <TextField fx:id="publisherTxt" layoutX="94.0" layoutY="185.0" promptText="Book publisher..." />
+      <TextField fx:id="categoryTxt" layoutX="94.0" layoutY="232.0" promptText="Book category..." />
+      <TextField fx:id="gradeTxt" layoutX="94.0" layoutY="275.0" prefHeight="31.0" prefWidth="49.0" promptText="0-10" />
+      <TextField fx:id="yearTxt" layoutX="94.0" layoutY="322.0" promptText="Book year of publication..." />
+      <Label layoutX="24.0" layoutY="96.0" text="Name:" />
+      <Label layoutX="24.0" layoutY="138.0" text="Author:" />
+      <Label layoutX="24.0" layoutY="185.0" text="Publisher:" />
+      <Label layoutX="24.0" layoutY="322.0" text="Year:" />
+      <Label layoutX="94.0" layoutY="31.0" text="-New Book-">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="finished" layoutX="182.0" layoutY="381.0" mnemonicParsing="false" />
+      <Label layoutX="110.0" layoutY="381.0" text="Finished:" />
+      <Button fx:id="addBt" layoutX="57.0" layoutY="433.0" mnemonicParsing="false" onAction="#onAddBtAction" text="Add" />
+      <Button fx:id="cancelBt" layoutX="185.0" layoutY="433.0" mnemonicParsing="false" onAction="#onCancelBtAction" text="Cancel" />
+      <Label layoutX="24.0" layoutY="232.0" text="Category: " />
+      <Label layoutX="24.0" layoutY="275.0" text="Grade:" />
+   </children>
+</AnchorPane>

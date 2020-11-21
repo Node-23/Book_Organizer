@@ -10,7 +10,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/MainView/MainView.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/View/MainView/MainView.fxml"));
             Scene scene = new Scene(parent);
             // scene.getStylesheets().add(getClass().getResource('application.css').toExternalForm());
             primaryStage.setScene(scene);

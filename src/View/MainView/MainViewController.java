@@ -1,5 +1,6 @@
-package MainView;
+package View.MainView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -7,15 +8,21 @@ import Model.BookManager;
 import Model.Books;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class MainViewController implements Initializable {
@@ -31,6 +38,8 @@ public class MainViewController implements Initializable {
     private Tooltip tooltip;
     @FXML
     private MenuItem add;
+    @FXML
+    private MenuItem search;
     @FXML
     private MenuItem about;
 
@@ -55,6 +64,29 @@ public class MainViewController implements Initializable {
         else{
             Tooltip.install(table,tooltip);
         }
+    }
+
+    @FXML
+    public void onMenuAction(){
+        if(BookManager.getBookList().isEmpty()){
+            search.setDisable(true);
+        }else{
+            search.setDisable(false);
+        }
+    }
+
+    @FXML
+    public void onAddAction() throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/View/AddView/AddView.fxml"));
+        Scene scene = new Scene(parent);
+        Stage popupwindow = new Stage();
+        popupwindow.setResizable(false);
+        popupwindow.initModality(Modality.APPLICATION_MODAL);
+        popupwindow.setTitle("New");
+        popupwindow.getIcons().add(new Image(getClass().getResourceAsStream(iconPath)));
+        popupwindow.setScene(scene);
+        popupwindow.showAndWait();
+        table.setItems(FXCollections.observableArrayList(BookManager.getBookList()));
     }
 
 }
