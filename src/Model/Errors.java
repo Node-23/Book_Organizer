@@ -2,10 +2,9 @@ package Model;
 
 public class Errors {
 
-    public static boolean verifyIsBlanck(String name, String author, String publisher, String category, String grade,
-            String year) {
+    public static boolean verifyIsBlanck(String name, String author, String publisher, String category, String year) {
         if (name.isBlank() == true || author.isBlank() == true || publisher.isBlank() == true
-                || category.isBlank() == true || grade.isBlank() == true || year.isBlank() == true) {
+                || category.isBlank() == true || year.isBlank() == true) {
             Alerts.blanckAlert();
             return true;
         }
@@ -57,8 +56,8 @@ public class Errors {
         return false;
     }
 
-    public static boolean gradeLimiter(Integer grade){
-        if(grade>10){
+    public static boolean gradeLimiter(Integer grade) {
+        if (grade > 10) {
             Alerts.gradeLimit();
             return true;
         }

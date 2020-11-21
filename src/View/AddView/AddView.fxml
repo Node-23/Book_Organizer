@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="478.0" maxWidth="308.0" minHeight="335.0" minWidth="308.0" prefHeight="470.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddView.AddViewController">
+<AnchorPane maxHeight="478.0" maxWidth="308.0" minHeight="335.0" minWidth="308.0" onMouseMoved="#unfinishedBookGrade" prefHeight="470.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddView.AddViewController">
    <children>
       <TextField fx:id="nameTxt" layoutX="94.0" layoutY="91.0" promptText="Book name..." />
       <TextField fx:id="authorTxt" layoutX="94.0" layoutY="138.0" promptText="Book author..." />

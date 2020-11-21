@@ -64,21 +64,38 @@ public class AddViewController implements Initializable {
     }
 
     @FXML
+    public void unfinishedBookGrade() {
+        if (finished.isSelected() == false) {
+            gradeTxt.setDisable(true);
+        } else {
+            gradeTxt.setDisable(false);
+        }
+    }
+
+    @FXML
     public void onAddBtAction() {
 
         if (Errors.verifyIsBlanck(nameTxt.getText(), authorTxt.getText(), publisherTxt.getText(), categoryTxt.getText(),
-                gradeTxt.getText(), yearTxt.getText())) {
+                yearTxt.getText())) {
             return;
         }
 
-        if(Errors.gradeLimiter(Integer.parseInt(gradeTxt.getText()))){
+        if (finished.isSelected() && Errors.verifyIsBlanck(gradeTxt.getText())) {
+            return;
+        }
+
+        if (finished.isSelected() && Errors.gradeLimiter(Integer.parseInt(gradeTxt.getText()))) {
             return;
         }
 
         Books newBook = new Books();
-        newBook = new Books(finished.isSelected(), nameTxt.getText(), authorTxt.getText(), publisherTxt.getText(),
-                categoryTxt.getText(), Integer.parseInt(gradeTxt.getText()), Integer.parseInt(yearTxt.getText()));
-
+        if (finished.isSelected()) {
+            newBook = new Books(finished.isSelected(), nameTxt.getText(), authorTxt.getText(), publisherTxt.getText(),
+                    categoryTxt.getText(), Integer.parseInt(gradeTxt.getText()), Integer.parseInt(yearTxt.getText()));
+        } else {
+            newBook = new Books(finished.isSelected(), nameTxt.getText(), authorTxt.getText(), publisherTxt.getText(),
+                    categoryTxt.getText(), Integer.parseInt(yearTxt.getText()));
+        }
         if (Errors.verifyIsRepeted(newBook.getName())) {
             return;
         }

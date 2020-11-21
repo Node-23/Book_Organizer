@@ -26,6 +26,17 @@ public class Books {
         this.Notes = new SimpleStringProperty("");
     }
 
+    public Books(Boolean finished, String name, String author, String publisher,String category,Integer year) {
+        this.finished = new SimpleBooleanProperty(finished);
+        this.name = new SimpleStringProperty(name);
+        this.author = new SimpleStringProperty(author);
+        this.publisher = new SimpleStringProperty(publisher);
+        this.category = new SimpleStringProperty(category);
+        this.grade = new SimpleIntegerProperty(-1);
+        this.year = new SimpleIntegerProperty(year);
+        this.Notes = new SimpleStringProperty("");
+    }
+
     public Books() {
         this.Notes = new SimpleStringProperty("");
     }
