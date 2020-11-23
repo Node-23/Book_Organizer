@@ -3,8 +3,10 @@ package View.BookView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import Model.Alerts;
 import Model.BookManager;
 import Model.Books;
+import View.MainView.MainViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -52,9 +54,19 @@ public class BookViewController implements Initializable {
         }else{  
         String path = "file:///"+book.getBookCover();
         bookCover.setImage(new Image(path));
-         
+        }
+    }
+
+    @FXML
+    public void deleteMenu(){
+        System.out.println("entrou");
+        if(Alerts.confirmAlert()){
+            BookManager.deleteBook(BookManager.getBookSelected());
+            MainViewController.deleteWindowClose();
         }
 
     }
+
+
 
 }

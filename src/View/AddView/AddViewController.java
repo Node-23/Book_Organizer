@@ -88,7 +88,7 @@ public class AddViewController implements Initializable {
     public void onImageBtAction() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select the book cover image");
-        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
         try {
             File file = fileChooser.showOpenDialog(null);
             bookCoverActualPath = file.getAbsolutePath();

@@ -27,6 +27,7 @@ import javafx.util.Duration;
 
 public class MainViewController implements Initializable {
     private String iconPath = "/Images/BookIcon.png";
+    public static Stage deleteStage;
 
     @FXML
     private TableView<Books> table;
@@ -57,20 +58,19 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    public void toolTipEnable(MouseEvent event){
-        if(BookManager.getBookList().isEmpty() || table.getSelectionModel().getSelectedItem() == null){
+    public void toolTipEnable(MouseEvent event) {
+        if (BookManager.getBookList().isEmpty() || table.getSelectionModel().getSelectedItem() == null) {
             Tooltip.uninstall(table, tooltip);
-        }
-        else{
-            Tooltip.install(table,tooltip);
+        } else {
+            Tooltip.install(table, tooltip);
         }
     }
 
     @FXML
-    public void onMenuAction(){
-        if(BookManager.getBookList().isEmpty()){
+    public void onMenuAction() {
+        if (BookManager.getBookList().isEmpty()) {
             search.setDisable(true);
-        }else{
+        } else {
             search.setDisable(false);
         }
     }
@@ -89,6 +89,10 @@ public class MainViewController implements Initializable {
         table.setItems(FXCollections.observableArrayList(BookManager.getBookList()));
     }
 
+    public static void deleteWindowClose() {
+        deleteStage.close();
+    }
+
     @FXML
     public void openBook(MouseEvent event) throws IOException {
         if (event.getClickCount() == 2 && table.getSelectionModel().getSelectedItem() != null) 
@@ -97,6 +101,7 @@ public class MainViewController implements Initializable {
             Parent parent = FXMLLoader.load(getClass().getResource("/View/BookView/BookView.fxml"));
             Scene scene = new Scene(parent);
             Stage popupwindow = new Stage();
+            deleteStage = popupwindow;
             popupwindow.setResizable(false);
             popupwindow.initModality(Modality.APPLICATION_MODAL);
             popupwindow.setTitle(BookManager.getBookSelected());

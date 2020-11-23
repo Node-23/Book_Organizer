@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -11,8 +12,14 @@
    <children>
       <MenuBar layoutX="7.0" layoutY="14.0" prefHeight="31.0" prefWidth="684.0" AnchorPane.bottomAnchor="307.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu fx:id="edit" mnemonicParsing="false" text="Edit" />
-          <Menu fx:id="delete" mnemonicParsing="false" text="Delete" />
+          <Menu fx:id="edit" mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#deleteMenu" text="Edit item" />
+               </items></Menu>
+          <Menu fx:id="delete" mnemonicParsing="false" text="Delete">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#deleteMenu" text="Delete item" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <ImageView fx:id="bookCover" fitHeight="287.0" fitWidth="230.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />

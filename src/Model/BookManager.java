@@ -31,9 +31,9 @@ public class BookManager {
         }
     }
 
-    public static void deleteBook(Books book) {
+    public static void deleteBook(String book) {
         for (Books b : bookList) {
-            if (b.equals(book)) {
+            if (b.getName().equals(book)) {
                 bookList.remove(b);
                 break;
             }
